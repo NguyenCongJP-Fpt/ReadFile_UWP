@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="ReadFile_UWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ReadFile_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid HorizontalAlignment="Stretch" Margin="-2,0,2,0" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <CommandBar Height="80">
+                <AppBarToggleButton Icon="Add" Label="Add" Click="Add_Click" />
+                <AppBarToggleButton Icon="View" Label="View" Click="View_Click"/>
+                <AppBarSeparator/>
+
+                <CommandBar.SecondaryCommands>
+                    <AppBarButton Label="Like" Click="AppBarButton_Click"/>
+                    <AppBarButton Label="Dislike" Click="AppBarButton_Click"/>
+                </CommandBar.SecondaryCommands>
+
+                <!--<CommandBar.Content>
+                    <TextBlock Text="Now playing..." Margin="12,14"/>
+                </CommandBar.Content>-->
+            </CommandBar>
+        </Grid>
+        <Grid Grid.Row="1">
+            <StackPanel HorizontalAlignment="Center" Margin="0,50,0,0">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="File Name" Margin="0,0,30,0"/>
+                    <TextBox x:Name="NameFile" Width="200"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                    <TextBlock Text="Content" Margin="0,0,42,0"/>
+                    <TextBox AcceptsReturn="True" x:Name="Content" Width="250" Height="100"/>
+                </StackPanel>
+                <Button Content="Save File" Margin="97,20,0,0" Click="btnSaveFile"/>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</Page>
